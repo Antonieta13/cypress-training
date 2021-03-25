@@ -24,4 +24,3 @@ module.exports = {
         "cypress/no-force": "warn"
     }
 };
-
