@@ -4,7 +4,9 @@
   "description": "This is a Workshop about Cypress",
   "main": "index.js",
   "scripts": {
-    "test:open": "cypress open"
+    "test:open": "npm run lint && cypress open",
+    "lint": "eslint ./cypress/integration/**/*.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,10 @@
   },
   "homepage": "https://github.com/Antonieta13/cypress-training#readme",
   "devDependencies": {
-    "cypress": "^6.8.0"
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "cypress": "^6.8.0",
+    "eslint": "^7.22.0",
+    "eslint-plugin-cypress": "^2.11.2"
   }
 }
