@@ -8,6 +8,11 @@
     "lint": "eslint ./cypress/integration/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
+  "scripts": {
+    ...
+    "test": "cypress run"
+    ...
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Antonieta13/cypress-training.git"
