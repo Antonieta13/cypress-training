@@ -1,4 +1,3 @@
-
 describe('Buy a t-shirt', () => {
 
     it('then the t-shirt should be bought', () => {
@@ -17,4 +16,3 @@ describe('Buy a t-shirt', () => {
             .should('have.text', 'Your order on My Store is complete.')
     });
 });
-
