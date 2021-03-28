@@ -21,8 +21,6 @@ describe("Buy a t-shirt", () => {
         cy.get("a.bankwire").click();
         cy.get(".cart_navigation span").click();
 
-
-
         cy.get("#center_column > div > p > strong")
             .should("have.text", "Your order on My Store is complete.");
     });
