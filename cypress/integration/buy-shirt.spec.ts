@@ -10,8 +10,6 @@ describe("Buy a t-shirt", () => {
         cy.get("#email").type("aperdomobo@gmail.com");
         cy.get("#passwd").type("WorkshopProtractor");
 
-        // Debes completar la prueba ...
-
         cy.get("#SubmitLogin").click();
         cy.get(".cart_navigation span").click();
 
