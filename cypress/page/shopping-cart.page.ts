@@ -4,7 +4,7 @@ class ShoppingCartPage {
     constructor() {
         this.shoppingCart = ".cart_navigation span";
     }
-    public Cart(): void {
+    public GoToCheckout(): void {
         cy.get(this.shoppingCart).click()
     }
 }

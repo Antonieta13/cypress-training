@@ -25,15 +25,15 @@ describe("Buy a t-shirt", () => {
 
         //product
         productListPage.goAddToCart()
-        productListPage.goThisButton()
+        productListPage.GoToCheckout()
 
         //shopping
-        shoppingCartPage.Cart()
+        shoppingCartPage.GoToCheckout()
 
         //login
         loginPage.insertMail("aperdomobo@gmail.com")
         loginPage.insertPassword("WorkshopProtractor")
-        loginPage.goSubmit()
+        loginPage.login()
 
 
         //shipping
@@ -45,13 +45,13 @@ describe("Buy a t-shirt", () => {
         addressStepPage.ConfirmAddress()
 
         //payment
-        paymentStepPage.PaymentType()
+        paymentStepPage.SelectPayment()
 
 
         paymentStepPage.ConfirmPayment()
 
 
-        paymentStepPage.ConfirmationMessage()
+        paymentStepPage.GetConfirmationMessage()
             .should("have.text", "Your order on My Store is complete.");
     });
 })

@@ -11,7 +11,7 @@ class PaymentStepPage {
         this.confirmationO = "#center_column > div > p > strong";
     }
 
-    public PaymentType(): void {
+    public SelectPayment(): void {
         cy.get(this.paymentT).click()
     }
 
@@ -20,11 +20,9 @@ class PaymentStepPage {
     }
 
 
-    public ConfirmationMessage(): Chainable<JQuery<HTMLElement>> {
+    public GetConfirmationMessage(): Chainable<JQuery<HTMLElement>> {
         return cy.get(this.confirmationO)
     }
 
 }
 export { PaymentStepPage }
-
-
