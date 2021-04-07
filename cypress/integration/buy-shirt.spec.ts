@@ -67,3 +67,4 @@ describe("Buy a t-shirt", () => {
         //    .should("have.text", "Your order on My Store is complete.");
     });
 })
+

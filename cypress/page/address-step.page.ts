@@ -5,7 +5,6 @@ class AddressStepPage {
     constructor() {
         this.address = ".checker";
         this.confirm = ".cart_navigation span";
-
     }
 
     public ReviewAddress(): void {
