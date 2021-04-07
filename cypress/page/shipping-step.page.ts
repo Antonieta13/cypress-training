@@ -12,7 +12,3 @@ class ShippingStepPage {
 
 }
 export { ShippingStepPage }
-
-
-
-

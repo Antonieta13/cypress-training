@@ -36,9 +36,9 @@ describe("Buy a t-shirt", () => {
         //cy.get(".cart_navigation span").click();
 
         //login
-        loginPage.insertMail()
+        loginPage.insertMail("aperdomobo@gmail.com")
         //cy.get("#email").type("aperdomobo@gmail.com");
-        loginPage.insertPassword()
+        loginPage.insertPassword("WorkshopProtractor")
         //cy.get("#passwd").type("WorkshopProtractor");
         loginPage.goSubmit()
         //cy.get("#SubmitLogin").click();
@@ -67,4 +67,3 @@ describe("Buy a t-shirt", () => {
         //    .should("have.text", "Your order on My Store is complete.");
     });
 })
-

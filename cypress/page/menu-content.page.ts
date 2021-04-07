@@ -17,4 +17,3 @@ class MenuContentPage {
 
 }
 export { MenuContentPage }
-
