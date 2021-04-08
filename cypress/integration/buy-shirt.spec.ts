@@ -1,25 +1,57 @@
+import { MenuContentPage } from "../page/index"
+import { ProductListPage } from "../page/index"
+import { ShoppingCartPage } from "../page/index"
+import { LoginPage } from "../page/index"
+import { ShippingStepPage } from "../page/index"
+import { AddressStepPage } from "../page/index"
+import { PaymentStepPage } from "../page/index"
+
+
+const menuContentPage = new MenuContentPage();
+const productListPage = new ProductListPage();
+const shoppingCartPage = new ShoppingCartPage();
+const loginPage = new LoginPage();
+const shippingStepPage = new ShippingStepPage();
+const addressStepPage = new AddressStepPage();
+const paymentStepPage = new PaymentStepPage();
+
+
 describe("Buy a t-shirt", () => {
 
     it("then the t-shirt should be bought", () => {
-        cy.visit("http://automationpractice.com/");
-        cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
-        cy.get("#center_column a.button.ajax_add_to_cart_button.btn.btn-default").click();
-        cy.get("[style*=\"display: block;\"] .button-container > a").click();
-        cy.get(".cart_navigation span").click();
 
-        cy.get("#email").type("aperdomobo@gmail.com");
-        cy.get("#passwd").type("WorkshopProtractor");
+        menuContentPage.visitMenuContentPage()
+        menuContentPage.goToTShirtMenu()
 
-        cy.get("#SubmitLogin").click();
-        cy.get(".cart_navigation span").click();
+        //product
+        productListPage.goAddToCart()
+        productListPage.GoToCheckout()
 
-        cy.get(".checker").click();
-        cy.get(".cart_navigation span").click();
+        //shopping
+        shoppingCartPage.GoToCheckout()
 
-        cy.get("a.bankwire").click();
-        cy.get(".cart_navigation span").click();
+        //login
+        loginPage.insertMail("aperdomobo@gmail.com")
+        loginPage.insertPassword("WorkshopProtractor")
+        loginPage.login()
 
-        cy.get("#center_column > div > p > strong")
+
+        //shipping
+        shippingStepPage.goCartNavigation()
+
+
+        //address
+        addressStepPage.ReviewAddress()
+        addressStepPage.ConfirmAddress()
+
+        //payment
+        paymentStepPage.SelectPayment()
+
+
+        paymentStepPage.ConfirmPayment()
+
+
+        paymentStepPage.GetConfirmationMessage()
             .should("have.text", "Your order on My Store is complete.");
     });
-});
+})
