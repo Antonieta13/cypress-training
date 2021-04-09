@@ -15,11 +15,11 @@ describe("the user navigates to the dresses page should", () => {
     })
 
     it("show the available dresses", () => {
-
         const DressesNames = ["Printed Dress", "Printed Dress", "Printed Summer Dress", "Printed Summer Dress", "Printed Chiffon Dress"];
 
         menuContentPage.visitMenuContentPage()
         menuContentPage.goToDressesMenu()
+
         dressesListPage.validateItemsNumber(5)
         dressesListPage.validateItemsNames(DressesNames)
 

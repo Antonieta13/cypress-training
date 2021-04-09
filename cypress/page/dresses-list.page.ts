@@ -25,5 +25,3 @@ class DressesListPage {
 }
 
 export { DressesListPage }
-
-//DressesNames

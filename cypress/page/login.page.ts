@@ -18,8 +18,7 @@ class LoginPage {
         cy.get(this.passInput).type(pass)
     }
 
-    public login
-        (): void {
+    public login(): void {
         cy.get(this.clickLogin).click()
     }
 
