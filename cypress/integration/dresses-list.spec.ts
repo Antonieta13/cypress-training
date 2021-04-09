@@ -1,6 +1,10 @@
-import { MenuContentPage, DressesListPage } from '../page/index'
+import { MenuContentPage } from "../page/index"
+import { DressesListPage } from "../page/index"
 
-describe('the user navigates to the dresses page should', () => {
+const menuContentPage = new MenuContentPage();
+const dressesListPage = new DressesListPage();
+
+describe("the user navigates to the dresses page should", () => {
 
     let menuContentPage: MenuContentPage;
     let dressesListPage: DressesListPage;
@@ -10,7 +14,14 @@ describe('the user navigates to the dresses page should', () => {
         dressesListPage = new DressesListPage();
     })
 
-    it('show the available dresses', () => {
-        // ... realiza la prueba
+    it("show the available dresses", () => {
+
+        const DressesNames = ["Printed Dress", "Printed Dress", "Printed Summer Dress", "Printed Summer Dress", "Printed Chiffon Dress"];
+
+        menuContentPage.visitMenuContentPage()
+        menuContentPage.goToDressesMenu()
+        dressesListPage.validateItemsNumber(5)
+        dressesListPage.validateItemsNames(DressesNames)
+
     })
 })
