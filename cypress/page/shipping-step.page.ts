@@ -6,7 +6,7 @@ class ShippingStepPage {
     }
 
     public goCartNavigation(): void {
-        cy.get(this.CartNav).click()
+        cy.get(this.CartNav).click();
 
     }
 

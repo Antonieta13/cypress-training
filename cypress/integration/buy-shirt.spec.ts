@@ -18,6 +18,23 @@ const paymentStepPage = new PaymentStepPage();
 
 describe("Buy a t-shirt", () => {
 
+    /* let menuContentPage: MenuContentPage;
+     let productListPage: ProductListPage;
+     let loginPage: LoginPage;
+     let shippingStepPage: ShippingStepPage;
+     let addressStepPage: AddressStepPage;
+     let paymentStepPage: PaymentStepPage;
+ 
+     before(() => {
+         menuContentPage = new MenuContentPage;
+         productListPage = new ProductListPage;
+         loginPage = new LoginPage;
+         shippingStepPage = new ShippingStepPage;
+         addressStepPage = new AddressStepPage;
+         paymentStepPage = new PaymentStepPage;
+     })*/
+
+
     it("then the t-shirt should be bought", () => {
 
         menuContentPage.visitMenuContentPage()
