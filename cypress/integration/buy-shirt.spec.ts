@@ -24,7 +24,7 @@ describe("Buy a t-shirt", () => {
      let shippingStepPage: ShippingStepPage;
      let addressStepPage: AddressStepPage;
      let paymentStepPage: PaymentStepPage;
- 
+
      before(() => {
          menuContentPage = new MenuContentPage;
          productListPage = new ProductListPage;
@@ -41,7 +41,7 @@ describe("Buy a t-shirt", () => {
         menuContentPage.goToTShirtMenu()
 
         //product
-        productListPage.goAddToCart()
+        productListPage.goAddToCart("Faded Short Sleeve")
         productListPage.GoToCheckout()
 
         //shopping
