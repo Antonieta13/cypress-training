@@ -17,11 +17,6 @@ class ProductListPage {
         cy.get(this.ProceedToCheckout).click()
     }
 
-    /*public addShirtToCart(name: string): void {
-        var product = this.findProductByName(name)
-        cy.get(this.addToCart).click()
-    }*/
-
     private findProductByName(name: string): Chainable<JQuery<HTMLElement>> {
         return cy.get(this.productList).filter(":contains('" + name + "')")
     }
