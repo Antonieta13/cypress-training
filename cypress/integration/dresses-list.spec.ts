@@ -1,9 +1,6 @@
 import { MenuContentPage } from "../page/index"
 import { DressesListPage } from "../page/index"
 
-const menuContentPage = new MenuContentPage();
-const dressesListPage = new DressesListPage();
-
 describe("the user navigates to the dresses page should", () => {
 
     let menuContentPage: MenuContentPage;
