@@ -7,32 +7,25 @@ import { AddressStepPage } from "../page/index"
 import { PaymentStepPage } from "../page/index"
 
 
-const menuContentPage = new MenuContentPage();
-const productListPage = new ProductListPage();
-const shoppingCartPage = new ShoppingCartPage();
-const loginPage = new LoginPage();
-const shippingStepPage = new ShippingStepPage();
-const addressStepPage = new AddressStepPage();
-const paymentStepPage = new PaymentStepPage();
-
-
 describe("Buy a t-shirt", () => {
 
-    /* let menuContentPage: MenuContentPage;
-     let productListPage: ProductListPage;
-     let loginPage: LoginPage;
-     let shippingStepPage: ShippingStepPage;
-     let addressStepPage: AddressStepPage;
-     let paymentStepPage: PaymentStepPage;
+    let menuContentPage: MenuContentPage;
+    let productListPage: ProductListPage;
+    let loginPage: LoginPage;
+    let shippingStepPage: ShippingStepPage;
+    let addressStepPage: AddressStepPage;
+    let paymentStepPage: PaymentStepPage;
+    let shoppingCartPage: ShoppingCartPage;
 
-     before(() => {
-         menuContentPage = new MenuContentPage;
-         productListPage = new ProductListPage;
-         loginPage = new LoginPage;
-         shippingStepPage = new ShippingStepPage;
-         addressStepPage = new AddressStepPage;
-         paymentStepPage = new PaymentStepPage;
-     })*/
+    before(() => {
+        menuContentPage = new MenuContentPage;
+        productListPage = new ProductListPage;
+        loginPage = new LoginPage;
+        shippingStepPage = new ShippingStepPage;
+        addressStepPage = new AddressStepPage;
+        paymentStepPage = new PaymentStepPage;
+        shoppingCartPage = new ShoppingCartPage;
+    })
 
 
     it("then the t-shirt should be bought", () => {

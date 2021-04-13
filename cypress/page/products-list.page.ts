@@ -9,8 +9,7 @@ class ProductListPage {
         this.productList = "#center_column ul.product_list li"
     }
     public goAddToCart(name: string): void {
-        var product = this.findProductByName(name)
-        cy.get(this.addToCart).click()
+        var product = this.findProductByName(name).find(this.addToCart).click()
     }
 
     public GoToCheckout(): void {
@@ -18,7 +17,7 @@ class ProductListPage {
     }
 
     private findProductByName(name: string): Chainable<JQuery<HTMLElement>> {
-        return cy.get(this.productList).filter(":contains('" + name + "')")
+        return cy.get(this.productList).filter(`:contains(${name})`)
     }
 }
 

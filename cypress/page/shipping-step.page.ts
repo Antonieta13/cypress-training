@@ -9,6 +9,5 @@ class ShippingStepPage {
         cy.get(this.CartNav).click();
 
     }
-
 }
 export { ShippingStepPage }
