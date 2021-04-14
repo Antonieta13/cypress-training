@@ -9,7 +9,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "cypress run",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
-  "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports"
+    "generate-report": "marge cypress/reports/report.json -f report -o cypress/reports"
   },
 
   "repository": {
