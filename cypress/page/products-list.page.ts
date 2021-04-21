@@ -17,7 +17,7 @@ class ProductListPage {
     }
 
     private findProductByName(name: string): Chainable<JQuery<HTMLElement>> {
-        return cy.get(this.productList).filter(`:contains(${name})`)
+    return cy.get(this.productList).filter(`:contains(${name})`)
     }
 }
 
