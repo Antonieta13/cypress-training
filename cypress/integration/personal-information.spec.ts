@@ -11,7 +11,6 @@ describe("Fill a form", () => {
 
     it("then the form must be fill", () => {
 
-        const hobbiesList = ["Sports","Reading", "Music"];
 
         personalInformation.visitFormPage()
         personalInformation.InsertName("Holmes")
