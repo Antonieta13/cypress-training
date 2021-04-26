@@ -1,4 +1,5 @@
-class PersonalInformation {
+class PersonalFormPage {
+
 
     private fillingFormPageURL: string;
     private name: string;
@@ -11,20 +12,27 @@ class PersonalInformation {
     private hobbiesMusic: string;
     private currentAddress: string;
     private clickSubmit: string;
+    private modalFullName: string;
+    //private modalEmail: string;
+
+
 
     constructor(){
+        this.fillingFormPageURL = "https://demoqa.com/automation-practice-form"
+        this.name = "#firstName"
+        this.lastName = "#lastName"
+        this.emailInput = "#userEmail-wrapper"
+        this.gender = "#genterWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label"
+        this.mobileNumber = "#userNumber"
+        this.hobbiesSports = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label"
+        this.hobbiesReading = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(2) > label"
+        this.hobbiesMusic = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(3) > label"
+        this.currentAddress = "#currentAddress"
+        this.clickSubmit = "#submit"
+        this.modalFullName = "body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(1) > td:nth-child(2)"
 
-    this.fillingFormPageURL = "https://demoqa.com/automation-practice-form"
-    this.name = "#firstName"
-    this.lastName = "#lastName"
-    this.emailInput = "#userEmail-wrapper"
-    this.gender = "#genterWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label"
-    this.mobileNumber = "#userNumber"
-    this.hobbiesSports = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(1) > label"
-    this.hobbiesReading = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(2) > label"
-    this.hobbiesMusic = "#hobbiesWrapper > div.col-md-9.col-sm-12 > div:nth-child(3) > label"
-    this.currentAddress = "#currentAddress"
-    this.clickSubmit = "#submit"
+       // this.modalEmail =  "body > div.fade.modal.show > div > div > div.modal-body > div > table > tbody > tr:nth-child(2) > td:nth-child(2)"
+
     }
 
     public visitFormPage(): void {
@@ -71,13 +79,58 @@ class PersonalInformation {
         )
     }
 
-    public InsertAddress(currentAddress:Selection): void {
+    public InsertAddress(currentAddress:string): void {
             cy.get(this.currentAddress).type(currentAddress)
         }
 
      public Submit(): void {
             cy.get(this.clickSubmit).click()
         }
+
+    public FillForm (person:PersonalInformation){
+        this.InsertName(person.name)
+        this.InsertLastName(person.lastName)
+        this.InsertEmail(person.email)
+        this.SelectGender(person.gender)
+        this.InsertMobile(person.mobileNumber)
+        this.InsertHobbies(person.hobbies)
+        this.InsertAddress(person.currentAddress)
+        this.Submit()
+
     }
 
-    export {PersonalInformation}
+    public validateModalFullName(person:PersonalInformation) {
+         cy.get(this.modalFullName).should("contain.text", person.name)
+
+
+
+
+   // public validateModalEmail(person:PersonalInformation) {
+         //   cy.get(this.modalEmail).should('contain.text', person.email)
+
+
+     }
+}
+class PersonalInformation {
+    name: string;
+    lastName:  string;
+    email:  string;
+    gender: string;
+    mobileNumber:  string;
+    hobbies:  string[];
+    currentAddress:  string;
+
+    constructor(name:string, lastName: string, email:string, gender:string, mobile:string, hobbies:string[], address:string) {
+        this.name = name
+        this.lastName = lastName
+        this.email = email
+        this.gender = gender
+        this.mobileNumber = mobile
+        this.hobbies = hobbies
+        this.currentAddress=address
+    }
+
+  }
+
+  export {PersonalFormPage}
+  export {PersonalInformation}

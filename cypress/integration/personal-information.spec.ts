@@ -1,26 +1,28 @@
-import { PersonalInformation } from  "../page/index"
+import { PersonalFormPage,PersonalInformation } from  "../page/index"
 
 describe("Fill a form", () => {
 
-    let personalInformation: PersonalInformation;
+    let personalFormPage: PersonalFormPage;
 
     before(() => {
 
-        personalInformation = new PersonalInformation;
+        personalFormPage = new PersonalFormPage;
     })
 
     it("then the form must be fill", () => {
 
 
-        personalInformation.visitFormPage()
-        personalInformation.InsertName("Holmes")
-        personalInformation.InsertLastName("Salazar")
-        personalInformation.InsertEmail("hibarras@email.com")
-        personalInformation.SelectGender("Male")
-        personalInformation.InsertMobile("3656589156")
-        personalInformation.InsertHobbies(["Reading", "Music"])
-        personalInformation.InsertAddress("Av siempreViva # 123")
-        personalInformation.Submit()
+
+       const person = new PersonalInformation ("Holmes", "Salazar",
+       "hibarras@email.com", "Male", "3656589156", ["Music", "Reading"],
+       "Av siempreViva # 123")
+
+       personalFormPage.visitFormPage()
+       personalFormPage.FillForm(person)
+       personalFormPage.validateModalFullName(person)
+      // personalFormPage.validateModalEmail(person)
+
+
 
     })
 })
